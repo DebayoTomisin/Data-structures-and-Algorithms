@@ -38,3 +38,6 @@ def binary_search(arr, item):
 print('the sorted array is {}'.format(array))
 print('The index of the item is:', binary_search(array, 5))
 
+array1 = [1, 4, 5, 9, 11, 18, 22]
+print(array1)
+print(len(array1))

@@ -76,4 +76,80 @@ print('')
 print('This is a test with a good input list: ', formatted(array3))
 
 
+"""Write a program that calculates the sum of numbers recursively"""
 
+
+def sum_recursive(arr):
+    if len(arr) == 1:
+        return arr[0]
+    else:
+        return arr[0] + sum_recursive(arr[1:])
+
+
+print('')
+print(array2)
+print(sum_recursive(array2))
+
+
+"""Write a function that converts a number to any base"""
+
+
+def to_base(n, base):
+    convert_string = "0123456789ABCDEF"
+    if n < base:
+        return convert_string[n]
+    else:
+        return to_base(n // base, base) + convert_string[n % base]
+
+
+print(to_base(10, 8))
+print('')
+"""Write a function to get the sum of a non negative integer"""
+
+number = 12344
+
+string_num = str(number)
+total = 0
+for i in range(len(string_num)):
+    num = int(string_num[i])
+    total += num
+
+print(total)
+
+
+def sum_string(figure):
+    if figure == 0:
+        return 0
+    else:
+        return figure % 10 + sum_string(int(figure / 10))
+
+
+print(sum_string(number))
+print('')
+print('')
+"""Write a python function to calculate the sum of positive integer of n"""
+
+
+def positive_integers(n):
+    sum_ = 0
+    for i in range(n + 1):
+        if i % 2 == 0:
+            sum_ += i
+    return sum_
+
+
+def recursive_positive(n):
+    if n < 1:
+        return 0
+    else:
+        return n + recursive_positive(n - 2)
+
+
+print(recursive_positive(10))
+print(positive_integers(10))
+
+sum_ = 0
+for i in range(10 + 1):
+    if i % 2 == 0:
+        sum_ += i
+print(sum_)
