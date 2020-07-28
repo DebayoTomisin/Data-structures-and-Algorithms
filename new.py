@@ -153,3 +153,60 @@ for i in range(10 + 1):
     if i % 2 == 0:
         sum_ += i
 print(sum_)
+
+
+def binary_search(arr, item):
+    high = len(arr) - 1
+    low = 0
+    while low <= high:
+        middle = high + low
+        value = arr[middle]
+        if value == item:
+            return middle
+        else:
+            if value < item:
+                low = middle + 1
+            else:
+                high = middle - 1
+    return None
+
+
+def binary_DC(arr, x):
+    low = 0
+    high = len(arr) - 1
+
+    if low <= high:
+        mid = low + high
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            low = mid + 1
+            return binary_DC(arr[mid:], x)
+        else:
+            high = mid - 1
+            return binary_DC(arr[:mid], x)
+    else:
+        return None
+
+
+def maxim_num(arr):
+    index = 0
+    big = arr[0]
+    for i in range(0, len(arr)):
+        if big < arr[i]:
+            big = arr[i]
+            index = i
+    return index
+
+
+print('This is array 1', array2)
+print('maximum value in this array is set at ', maxim_num(array2))
+num = [3]
+print('')
+print('the base case of the maximum number function is,', maxim_num(num))
+sort_list = [1, 3, 4, 9, 10, 19]
+print('The result of the binary search algorithm is ', binary_search(sort_list, 9))
+print('')
+print('')
+print('the recursive binary search is ', binary_DC(sort_list, 9))
+
