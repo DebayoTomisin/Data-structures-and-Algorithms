@@ -1,0 +1,38 @@
+It is important to put the important stuffs on paper, what this entails is creating flowcharts and pseudocode. This helps have clearer understanding 
+of the flow of execution of the program.
+
+#IDEAS
+
+In designing flowcharts, we should follow the following guidelines
+
+1. Write state and instruction steps in rectangles
+2. Write decision steps in diamonds
+3. connect sequential steps with arrows.
+4. Mark the start and the end of the process or program.
+
+Pseudocode:  Human friendly method of representing computer programs.
+
+Mathematical Models: Models basically represents a problem and its characteristics. It is important to understand these models as they help to know
+how a problem should be approached, either, quadractically, logarithmically, with graph theory etc. very important concept.
+
+
+##LOGIC
+In logic, variables and operators represent the validity of things rather than modelling numerical problems like in math.
+For instance, the validity of the expression “if the pool is warm, I’ll swim” is based on two variables
+A = the pool is warm
+B = i swim
+A -> B 
+
+Dependency between variables is expressed with a conditional operator such as [!, ->, etc].
+
+A contrapositive statement simply implies A-> B is the same !A -> !B, like in the example above, the pool is cold (!A) and i dont swim (!B)
+
+BiConditional statement (A <--> B), in the example above,  this statement means i'll only swim if and only if the pool is warm.
+
+AND, OR, Exclusive OR: These are the most popular logical operators around.
+A = drank Wine
+B = drank vodka
+
+AND means dranked mixed drinks
+OR means you drank, whether mixed or now
+ExOR means You didn't mix the drinks but drank.
