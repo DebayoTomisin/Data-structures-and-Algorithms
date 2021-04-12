@@ -36,3 +36,22 @@ B = drank vodka
 AND means dranked mixed drinks
 OR means you drank, whether mixed or now
 ExOR means You didn't mix the drinks but drank.
+
+Boolean Algebra: Algebra in relation to boolean expressions.
+a. Associativity: mutliplications and sums in parenthesis can be calculated in any order. A AND (B AND C) = (A AND B) AND C 
+b. Distributivity: A OR (B AND C) == (A OR B) AND (A OR C)
+c. De'Morgan's law : basically states that ANDS can be transformed into ORs and vice versa !(A AND B) = !A OR !B. 
+an example reads, A server crashes if it’s overheating while the air conditioning is off. It also crashes if it’s overheating and its chassis cooler fails. In which conditions does the server work?
+
+The logical statements here:
+A = overheating
+B =  air conditioning if off
+c = chassis cooler fails
+D = server crashes
+
+for the server to crash, this expression can be dervied:  (A AND B) OR (A AND C) -> D
+simplify this expression with Distributivity and you have:  A AND (B OR C) -> D
+To find when the server does not crash (!D), we can use the contrapositive expression: !(A AND (B OR C)) -> !D
+we can use De'Morgan's law to remove the parenthesis: !A OR !(B OR C) => !D = !A OR (!B AND !C) -> !D. final simplified form for this problem.
+
+
