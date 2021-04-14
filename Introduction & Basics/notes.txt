@@ -55,3 +55,14 @@ To find when the server does not crash (!D), we can use the contrapositive expre
 we can use De'Morgan's law to remove the parenthesis: !A OR !(B OR C) => !D = !A OR (!B AND !C) -> !D. final simplified form for this problem.
 
 
+##COUNTING: This involves processes like mutliplication, permutations (!n), combinations (n choose m), sums = [ n( n + 1) / 2]
+
+##PROBABILITY: basically describes the chance of an event happening. it is the number of way an event can occur divided by the total number of possible outcomes.
+When the outcome of an event does not have an effect on the outcome of another event, it is said to be INDEPENDENT.
+When two outcomes cannot simultaneously occur, they are said to be MUTUALLY EXCLUSIVE and if two events are need to be mutually exclusive then summing up their probabilities should do the trick.
+When all mutually exclusive events cover all the possible outcomes, it is said to be complimentary, the sum of all complimentary events should equal 100%.
+
+An example, Your castle is defended by five towers. Each tower has a 20% probability of disabling an invader before he reaches the gate. What are the chances of stopping him?
+
+If the probability of each tower stopping him is 20% then the probability of them missing is 80% and since we are dealing with 5 towers, the find the culmulative probability, 
+which results to (0.8 raised to 5) = 0.33, this is the probability of them missing, to then finding the probability of them stopping him, we recall that the sum of complimentary probability is equal to 100%, hence we have 1 -0.33 = 0.67. The probability of stopping the intruder is set at 67%.
