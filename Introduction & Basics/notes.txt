@@ -66,3 +66,6 @@ An example, Your castle is defended by five towers. Each tower has a 20% probabi
 
 If the probability of each tower stopping him is 20% then the probability of them missing is 80% and since we are dealing with 5 towers, the find the culmulative probability, 
 which results to (0.8 raised to 5) = 0.33, this is the probability of them missing, to then finding the probability of them stopping him, we recall that the sum of complimentary probability is equal to 100%, hence we have 1 -0.33 = 0.67. The probability of stopping the intruder is set at 67%.
+
+
+/* This section is from Data structures and algorithmic thinking with Python */
