@@ -1,0 +1,4 @@
+THESE ARE THE NOTES ON CHAPTER 2 ON COMPLEXITY FOR COMPUTER SCIENCE DISTILLED.
+
+How long does it take to sort 26 shuffled cards? or whatever amount of cards? the time taken is equivalent to the method used in sorting the cards.
+A method that requires a finite series of operations is called an ALGORITHM
