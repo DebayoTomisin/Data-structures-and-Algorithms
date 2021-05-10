@@ -1,4 +1,17 @@
 THESE ARE THE NOTES ON CHAPTER 2 ON COMPLEXITY FOR COMPUTER SCIENCE DISTILLED.
 
 How long does it take to sort 26 shuffled cards? or whatever amount of cards? the time taken is equivalent to the method used in sorting the cards.
-A method that requires a finite series of operations is called an ALGORITHM
+A method that requires a finite series of operations is called an ALGORITHM.
+Less operations means less computing power and in the end we want fast solutions so we monitior the number of operations our algorithms have, Many algorithms require fast growing number of operations when the input size increases, so we find the TIME COMPLEXITY to avoid bad surprises.
+
+TIME COMPLEXITY T(n): This basically describes the number of operations an algorithm performs when processing an input of size n. It is also described as the running cost.
+
+Input size is not the only characteristic that affects the number of operations needed by the algorithm. When an algorithm can have different value of T(n) for the same value of n, we resort to cases.
+
+1. BEST CASE: When the input requires the minimum number of operations for any input of that size.
+2. WORST CASE: When the input requires the maximum number of operations for any input of that size.
+3. AVERAGE CASE: When the input requires the average number of operations for typical inputs of the said size.
+
+In general the most important is the worst case, because it gives you a baseline you can always count on.
+
+COUNTING TIME
