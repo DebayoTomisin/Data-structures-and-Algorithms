@@ -69,3 +69,15 @@ which results to (0.8 raised to 5) = 0.33, this is the probability of them missi
 
 
 /* This section is from Data structures and algorithmic thinking with Python */
+There are two types of data types
+1. System defined data types (primitive types)
+2. User defined data types
+
+A data structure is a special method for storing and organizing data so that it can be used efficiently. Examples are trees, stacks, arrays, queues  etc.
+Depending on the structure of the data, data structures can be divided into two parts: Linear and Non Linear data structures.
+
+ABSTRACT DATA TYPES: is basically the combination of data structures and their operations, it consists of two parts, 1. declaration of data annd 2. the declaration of operations.
+
+Algorithms are basically step by step procedures to solving a  given problem. The analysis of algorithms is to help determine the most efficient solution to the problem being solved. The efficiency is measured mainly in time used in execution and then space i.e the amount of memory needed to run the algorithm to completion.
+
+Running time analysis is described as the process of determining how processing time increases as the input size of the problem increases.(This is described in the note on complexity)
