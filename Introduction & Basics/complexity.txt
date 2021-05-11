@@ -27,3 +27,15 @@ Exponential times are the worst time complexities avaliable and are considered n
 
 COUNTING MEMORY
 The calculation memory is called the space complexity basically refers to the amount of computer memory need to run the operations to completion within the said time complexity.
+
+guidelines for asymptotic analysis
+1. Loops : this is the running time of statements inside the loop multiplied by the number of iterations e.g
+
+#executing times
+for i in range(0, n):
+    print('current number': i) # constant time
+Total time is constant time c multiplied by the number of iterations(n) = c * n
+
+2. Netsed loops: O(n2)
+3. Consecutive statements: well this can be a combination of nested loops, a single statement a single loop etc.
+4. if then- else statement have O(n)
