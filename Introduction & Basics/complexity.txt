@@ -20,3 +20,10 @@ we find time complexity by counting the number of basic operations it requires f
 Understanding Growth: T(n) can be approximated by using the fastest growing term called the DOMINANT TERM. This is basically used to calculate how execution time will grow. the basic idea is the dominant term is the largest term in the calculation for the processes in the algorithm.
 If we plot a graph to compare complexities especially those with the same dominant term we'll see that reagrdless of the the coefficient, the larger the value grows the closer the curves come together until they finally are the same or are on the same line.
 Remember, this effect of curves getting closer works if the fastest growing term is the same. The plot of a function with a linear growth (n) never gets closer and closer to one with a quadratic growth (n2), which in turn never gets closer and closer to one having a cubic growth (n3).
+
+The big O notation is just a fancy way of representing the dominant term in the expressing the rate of growth of execution with respect to the change in input values.
+
+Exponential times are the worst time complexities avaliable and are considered not runnable. The same could be said for quadratic times but it doesn't have the same ridiculous time taken as the exponential time. The worst time complexity to consider is the factorial time. 
+
+COUNTING MEMORY
+The calculation memory is called the space complexity basically refers to the amount of computer memory need to run the operations to completion within the said time complexity.
