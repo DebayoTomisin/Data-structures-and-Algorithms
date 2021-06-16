@@ -173,4 +173,34 @@ def linearSearch(arr, value):
 
 
 print(insertionSort([2, 1, 5, 3, 10, 22, 12, 11]))
-print(linearSearch([1, -5, 7, 21, 12, 5], 5))
+# print(linearSearch([1, -5, 7, 21, 12, 5], 5))
+
+
+def addSameIndex(arr1, arr2):
+    newArr = []
+    size1 = len(arr1)
+    size2 = len(arr2)
+
+    if size1 != size2:
+        return newArr
+
+    for i in range(size1):
+        # result = 0
+        result = arr1[i]
+        for j in range(size2):
+            if i == j:
+                result += arr2[j]
+        newArr.append(result)
+    return newArr
+
+
+print(addSameIndex([1, 2, 3], [4, 5, 6]))
+
+k = [[1, 2, 3], [4, 5, 6]]
+sumdata =[]
+for x in range(len(k[0])):
+    z = 0
+    for y in range(len(k)):
+        z += k[y][x]
+    sumdata.append(z)
+# print(sumdata)
