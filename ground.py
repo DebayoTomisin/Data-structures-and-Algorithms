@@ -135,3 +135,42 @@ print(ListMethods.binarySearch([1, 5, 6, 10, 17, 20, 26], 33))
 print(ListMethods.rotateArray([1, 2, 3, 6, 7, 9, 10, 11, 34], 3))
 print(ListMethods.rotateArray([1, 3, 4, 6, 8], 2))
 print(ListMethods.maxSubArraySum([1, -6, -8, 10, 11, 21, -33]))
+
+
+def insertionSort(arr):
+    j = 0
+    size = len(arr)
+
+    for j in range(size):
+        i = j - 1
+        key = arr[j]
+        while i >= 0 and arr[i] > key:
+            arr[i + 1] = arr[i]
+            i -= 1
+        arr[i + 1] = key
+    return arr
+
+
+def insertionSortDecs(arr):
+    j = 0
+    size = len(arr)
+    for j in range(size):
+        key = arr[j]
+        i = j - 1
+        while i >= 0 and arr[i] < key:
+            arr[i + 1] = arr[i]
+            i -= 1
+        arr[i + 1] = key
+    return arr
+
+
+def linearSearch(arr, value):
+    size = len(arr)
+    for i in range(size):
+        if value == arr[i]:
+            return i
+    return -1
+
+
+print(insertionSort([2, 1, 5, 3, 10, 22, 12, 11]))
+print(linearSearch([1, -5, 7, 21, 12, 5], 5))

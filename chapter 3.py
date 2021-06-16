@@ -48,7 +48,7 @@ def sum_list(arr):
 
 
 array = [1, 3, 4, 5, 6, 7, 8]
-# print(sum_list(array))
+print(sum_list(array))
 
 
 """Write a function that converts an integer to any string in any base """
