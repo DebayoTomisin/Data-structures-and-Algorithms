@@ -114,9 +114,33 @@ class ListMethods(object):
             j -= 1
         return arr
 
+    @classmethod
+    def maxSubArraySum(cls, arr):
+        size = len(arr)
+        maxSoFar = 0
+        maxEndingHere = 0
+        for i in range(size):
+            maxEndingHere = maxEndingHere + arr[i]
+            if maxEndingHere < 0:
+                maxEndingHere = 0
+            if maxSoFar < maxEndingHere:
+                maxSoFar = maxEndingHere
+            i += 1
+        return maxSoFar
+
 
 print(ListMethods.sumArray([1, 4, 5, 10, 8, 9]))
 print(ListMethods.sequentialSearch([1, 4, 5, 9], 4))
 print(ListMethods.binarySearch([1, 5, 6, 10, 17, 20, 26], 33))
 print(ListMethods.rotateArray([1, 2, 3, 6, 7, 9, 10, 11, 34], 3))
-print(ListMethods.reverseArray([1, 3, 4, 6, 8], 1, 3))
+print(ListMethods.rotateArray([1, 3, 4, 6, 8], 2))
+print(ListMethods.maxSubArraySum([1, -6, -8, 10, 11, 21, -33]))
+
+
+def search(arr, value):
+    size = len(arr)
+    for i in range(size):
+        if value == arr[i]:
+            return True
+        i += 1
+    return False
