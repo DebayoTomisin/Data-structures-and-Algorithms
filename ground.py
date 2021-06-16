@@ -1,6 +1,6 @@
 from abc import ABCMeta
 from abc import abstractmethod
-import  math
+import math
 print('this is it gentlemen')
 """ This is basically me brushing up on my python skills"""
 
@@ -135,12 +135,3 @@ print(ListMethods.binarySearch([1, 5, 6, 10, 17, 20, 26], 33))
 print(ListMethods.rotateArray([1, 2, 3, 6, 7, 9, 10, 11, 34], 3))
 print(ListMethods.rotateArray([1, 3, 4, 6, 8], 2))
 print(ListMethods.maxSubArraySum([1, -6, -8, 10, 11, 21, -33]))
-
-
-def search(arr, value):
-    size = len(arr)
-    for i in range(size):
-        if value == arr[i]:
-            return True
-        i += 1
-    return False
