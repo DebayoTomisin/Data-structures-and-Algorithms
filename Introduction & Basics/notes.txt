@@ -81,3 +81,6 @@ ABSTRACT DATA TYPES: is basically the combination of data structures and their o
 Algorithms are basically step by step procedures to solving a  given problem. The analysis of algorithms is to help determine the most efficient solution to the problem being solved. The efficiency is measured mainly in time used in execution and then space i.e the amount of memory needed to run the algorithm to completion.
 
 Running time analysis is described as the process of determining how processing time increases as the input size of the problem increases.(This is described in the note on complexity)
+
+
+MASTERING DIVIDE AND CONQUER: This basically invloves spliting the original tasks into subtasks each of which is part of the original problem.
