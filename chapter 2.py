@@ -8,10 +8,11 @@ The trade off between arrays and linked list"""
 def find_Smallest(arr):
     smallest = arr[0]
     smallest_index = 0
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:
-            smallest = arr[i]
+    f = 0
+    for i in range(f, len(arr)):
+        if arr[i] < arr[f]:
             smallest_index = i
+        # print(f + i)
     return smallest_index
 
 

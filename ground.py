@@ -194,13 +194,51 @@ def addSameIndex(arr1, arr2):
     return newArr
 
 
-print(addSameIndex([1, 2, 3], [4, 5, 6]))
+print(addSameIndex([9, 2, 3], [4, 5, 6]))
 
 k = [[1, 2, 3], [4, 5, 6]]
-sumdata =[]
+sumdata =  []
 for x in range(len(k[0])):
     z = 0
     for y in range(len(k)):
         z += k[y][x]
     sumdata.append(z)
 # print(sumdata)
+print(" ")
+print(" ")
+
+
+"""def findSmallest(arr):
+    f = 0
+    index = f
+    for i in range(f, len(arr)):
+        # print('the value for i is:', i)
+        if arr[i] < arr[f]:
+            index = i
+            temp = arr[f]
+        arr[f] = arr[index]
+        arr[index] = arr[temp]
+    return arr """
+
+
+# print(findSmallest([-100, 1, -18, 6, 13, 2, -3]))
+
+arr = [-100, 1, -18, 6, 13, 2, -3]
+f = 0
+index = 0
+temp = 0
+size = len(arr)
+for i in range(0, size -1):
+    if arr[i] < arr[i + 1]:
+        temp = arr[i + 1]
+        index = i
+    arr[i + 1] = arr[index]
+    arr[index] = temp
+
+
+#temp = arr[1]  # 2
+#index = 1
+#arr[1] = arr[4]
+#arr[4] = temp
+
+print(arr)
