@@ -224,21 +224,31 @@ print(" ")
 # print(findSmallest([-100, 1, -18, 6, 13, 2, -3]))
 
 arr = [-100, 1, -18, 6, 13, 2, -3]
-f = 0
-index = 0
+for i in range(len(arr)):
+    value = arr[i]
+    for j in range(i+1, len(arr)):
+        if arr[i] > arr[j]:
+            arr[i] = arr[j]
+            arr[j] = value
+"""f = 0
+# index = 0
 temp = 0
 size = len(arr)
-for i in range(0, size -1):
-    if arr[i] < arr[i + 1]:
-        temp = arr[i + 1]
-        index = i
-    arr[i + 1] = arr[index]
-    arr[index] = temp
+for i in range(f, size):
+    temp = arr[f]
+    print('value of f is', temp)
+    
+    if arr[i] < arr[f]:
+        arr[f] = arr[i]
+        arr[i] = temp
+    f += 1 """
+
+
+
 
 
 #temp = arr[1]  # 2
 #index = 1
 #arr[1] = arr[4]
 #arr[4] = temp
-
 print(arr)
