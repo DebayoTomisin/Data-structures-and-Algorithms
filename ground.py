@@ -207,48 +207,27 @@ for x in range(len(k[0])):
 print(" ")
 print(" ")
 
-
-"""def findSmallest(arr):
-    f = 0
-    index = f
-    for i in range(f, len(arr)):
-        # print('the value for i is:', i)
-        if arr[i] < arr[f]:
-            index = i
-            temp = arr[f]
-        arr[f] = arr[index]
-        arr[index] = arr[temp]
-    return arr """
-
-
-# print(findSmallest([-100, 1, -18, 6, 13, 2, -3]))
-
 arr = [-100, 1, -18, 6, 13, 2, -3]
 for i in range(len(arr)):
     value = arr[i]
+    ix = i
     for j in range(i+1, len(arr)):
-        if arr[i] > arr[j]:
-            arr[i] = arr[j]
-            arr[j] = value
-"""f = 0
-# index = 0
-temp = 0
-size = len(arr)
-for i in range(f, size):
-    temp = arr[f]
-    print('value of f is', temp)
-    
-    if arr[i] < arr[f]:
-        arr[f] = arr[i]
-        arr[i] = temp
-    f += 1 """
+        if arr[ix] > arr[j]:
+            ix = j
+    arr[i], arr[ix] = arr[ix], arr[i]
 
-
-
-
-
-#temp = arr[1]  # 2
-#index = 1
-#arr[1] = arr[4]
-#arr[4] = temp
 print(arr)
+
+
+def selectionSort(arr):
+    size = len(arr)
+    for i in range(size):
+        ix = i
+        for j in range(i + 1, size):
+            if arr[ix] > arr[j]:
+                ix = j
+        arr[i], arr[ix] = arr[ix], arr[i]
+    return arr
+
+print(' ')
+print(selectionSort([-100, 1, -18, 6, 13, 2, -3]))
