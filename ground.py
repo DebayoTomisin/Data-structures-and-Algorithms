@@ -207,7 +207,7 @@ for x in range(len(k[0])):
 print(" ")
 print(" ")
 
-arr = [-100, 1, -18, 6, 13, 2, -3]
+arr = [-100, 1, 5, 5, 9, 7, 6, -18, 2, -3]
 for i in range(len(arr)):
     value = arr[i]
     ix = i
@@ -230,4 +230,9 @@ def selectionSort(arr):
     return arr
 
 print(' ')
-print(selectionSort([-100, 1, -18, 6, 13, 2, -3]))
+print(selectionSort(arr))
+
+def getValue(arr):
+    for i in range(len(arr)):
+        ix = i
+        for j in range()
