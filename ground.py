@@ -232,7 +232,22 @@ def selectionSort(arr):
 print(' ')
 print(selectionSort(arr))
 
-def getValue(arr):
+
+"""What this problem is is that you find the number of values to the right of the set value that is less than the set
+number. its a simple problem that i applied the idea of selection sort to solve. """
+
+
+def getRightValue(arr):
+    newArr = []
     for i in range(len(arr)):
         ix = i
-        for j in range()
+        value = 0
+        for j in range(ix + 1, len(arr)):
+            if arr[ix] > arr[j]:
+                value += 1
+        newArr.append(value)
+    return newArr
+
+
+print(' ')
+print(getRightValue([1, 1, 1, 1, 1, 1]))
