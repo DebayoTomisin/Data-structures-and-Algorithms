@@ -39,3 +39,5 @@ Total time is constant time c multiplied by the number of iterations(n) = c * n
 2. Netsed loops: O(n2)
 3. Consecutive statements: well this can be a combination of nested loops, a single statement a single loop etc.
 4. if then- else statement have O(n)
+
+the idea of size of input is in the case of an array the numer of items in the array but in the case of say, adding two numbers, the size of the input will be the number of bits necessary to express this in ordinary binary notation.

@@ -250,4 +250,4 @@ def getRightValue(arr):
 
 
 print(' ')
-print(getRightValue([1, 1, 1, 1, 1, 1]))
+print(getRightValue([1, 0, 3, 1, 9, 7]))
