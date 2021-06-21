@@ -197,7 +197,7 @@ def addSameIndex(arr1, arr2):
 print('Add of the same Index', addSameIndex([9, 2, 3], [4, 5, 6]))
 
 k = [[1, 2, 3], [4, 5, 6]]
-sumdata =  []
+sumdata = []
 for x in range(len(k[0])):
     z = 0
     for y in range(len(k)):
@@ -252,3 +252,21 @@ def getRightValue(arr):
 
 print(' ')
 
+
+def mergeSort(arr):
+    size = len(arr)
+    p = 0
+    q = int(size / 2)
+    r = size
+    L = arr[p:q + 1]
+    R = arr[q: r + 1]
+    return L, R
+
+
+print(mergeSort([1, 2, 3, 4, 5, 6]))
+
+arr2 = [1, 5, 8, 9, 14, 2, 3, 0]
+size = len(arr2)
+p = 0
+q = int(size / 2)
+r = size - 1
