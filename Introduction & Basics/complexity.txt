@@ -41,3 +41,5 @@ Total time is constant time c multiplied by the number of iterations(n) = c * n
 4. if then- else statement have O(n)
 
 the idea of size of input is in the case of an array the numer of items in the array but in the case of say, adding two numbers, the size of the input will be the number of bits necessary to express this in ordinary binary notation.
+
+the average case running time of an algo is almost the same as the worst case, what it does is half the amount of iterations but it does not change the amount of instructions needed to run the algo to completion.

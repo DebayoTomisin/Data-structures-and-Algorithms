@@ -194,7 +194,7 @@ def addSameIndex(arr1, arr2):
     return newArr
 
 
-print(addSameIndex([9, 2, 3], [4, 5, 6]))
+print('Add of the same Index', addSameIndex([9, 2, 3], [4, 5, 6]))
 
 k = [[1, 2, 3], [4, 5, 6]]
 sumdata =  []
@@ -229,6 +229,7 @@ def selectionSort(arr):
         arr[i], arr[ix] = arr[ix], arr[i]
     return arr
 
+
 print(' ')
 print(selectionSort(arr))
 
@@ -250,4 +251,4 @@ def getRightValue(arr):
 
 
 print(' ')
-print(getRightValue([1, 0, 3, 1, 9, 7]))
+
