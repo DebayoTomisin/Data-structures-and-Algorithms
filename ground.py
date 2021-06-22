@@ -258,9 +258,18 @@ def mergeSort(arr):
     p = 0
     q = int(size / 2)
     r = size
-    L = arr[p:q + 1]
+    L = arr[p:q]
     R = arr[q: r + 1]
-    return L, R
+    i = 0
+    j = 0
+    for k in range(p, r):
+        if L[i] <= R[j]:
+            arr[k] = L[i]
+            i += 1
+        else:
+            arr[k] = R[j]
+            j += 1
+    return arr
 
 
 print(mergeSort([1, 2, 3, 4, 5, 6]))
