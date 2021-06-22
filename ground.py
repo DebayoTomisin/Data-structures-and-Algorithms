@@ -272,7 +272,27 @@ def mergeSort(arr):
     return arr
 
 
-print(mergeSort([1, 2, 3, 4, 5, 6]))
+def mergeSorted(arr):
+    p = 0
+    r = len(arr)
+    q = int((r + p) / 2)
+    n1 = q - p + 1
+    n2 = r - q
+    L = []
+    R = []
+    for i in range(n1):
+        L.append(arr[i])
+    for j in range(n2):
+        R.append(arr[q + j])
+    L.append('end')
+    R.append('end')
+    return L, R
+
+
+print(mergeSorted([4, 1, 2, 0, 3, 9, 11]))
+
+
+# print(mergeSort([1, 2, 3, 4, 5, 6]))
 
 arr2 = [1, 5, 8, 9, 14, 2, 3, 0]
 size = len(arr2)
