@@ -253,26 +253,60 @@ def getRightValue(arr):
 print(' ')
 
 
+def mergeSorted(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        mergeSorted(left)
+        mergeSorted(right)
+        i = 0
+        j = 0
+        k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+    return arr
+
+
+
+print(mergeSorted([1, 9, 2, 4, 1, 0, 19]))
+
 def mergeSort(arr):
     size = len(arr)
-    p = 0
     q = int(size / 2)
-    r = size
-    L = arr[p:q]
-    R = arr[q: r + 1]
+    L = arr[0:q]
+    R = arr[q + 1:size]
     i = 0
     j = 0
-    for k in range(p, r):
+    for k in range(size):
         if L[i] <= R[j]:
             arr[k] = L[i]
             i += 1
         else:
             arr[k] = R[j]
             j += 1
-    return arr
+    return L, R, arr
 
 
-def mergeSorted(arr):
+# print(mergeSort([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+"""def mergeSorted(arr):
     p = 0
     r = len(arr)
     q = int((r + p) / 2)
@@ -284,15 +318,19 @@ def mergeSorted(arr):
         L.append(arr[i])
     for j in range(n2):
         R.append(arr[q + j])
-    L.append('end')
-    R.append('end')
-    return L, R
+    i = 0
+    j = 0
+    for k in range(len(arr)):
+        if L[i] <= R[j]:
+            arr[k] = L[i]
+            i += 1
+        else:
+            arr[k] = R[j]
+            j += 1
+    return L, R, arr """
 
 
-print(mergeSorted([4, 1, 2, 0, 3, 9, 11]))
 
-
-# print(mergeSort([1, 2, 3, 4, 5, 6]))
 
 arr2 = [1, 5, 8, 9, 14, 2, 3, 0]
 size = len(arr2)
