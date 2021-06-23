@@ -1,6 +1,7 @@
 from abc import ABCMeta
 from abc import abstractmethod
 import math
+import re
 print('this is it gentlemen')
 """ This is basically me brushing up on my python skills"""
 
@@ -337,3 +338,13 @@ size = len(arr2)
 p = 0
 q = int(size / 2)
 r = size - 1
+
+
+def findLongest(sen):
+    str = sen
+    cleanString = re.sub('\W+', ' ', str)
+    value = max(cleanString.split(), key=len)
+    return value
+
+print(' ')
+print(findLongest('this is the correct value!!!!! i could see'))
