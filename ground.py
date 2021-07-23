@@ -139,7 +139,7 @@ print(ListMethods.maxSubArraySum([1, -6, -8, 10, 11, 21, -33]))
 
 
 def insertionSort(arr):
-    j = 0
+    j = 2
     size = len(arr)
 
     for j in range(size):
@@ -348,3 +348,21 @@ def findLongest(sen):
 
 print(' ')
 print(findLongest('this is the correct value!!!!! i could see'))
+
+
+def insertion(arr):
+    size = len(arr)
+    j = 2
+    for j in range(j, size):
+        key = arr[j]
+        i = j - 1
+        while i > 0 and arr[i + 1] >= key:
+            arr[i + 1] = arr[i]
+            i -= 1
+        arr[i + 1] = key
+        print(key)
+    return arr
+
+
+print(insertion([3, 8, 9, 0]))
+
