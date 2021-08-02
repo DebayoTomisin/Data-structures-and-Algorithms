@@ -377,8 +377,8 @@ class MaximSubArray:
 
     def BruteForce(self):
         size = len(self.arr)
+        diff = 0
         for i in range(size):
-            diff = 0
             j = i + 1
             for j in range(size):
 
@@ -388,7 +388,9 @@ class MaximSubArray:
         return diff
 
 
-try1 = MaximSubArray([1, 2, 3, 4, 5])
+try1 = MaximSubArray([100, 24, 10, 50])
 
 print('this is the solution to the brute force method')
 print(try1.BruteForce())
+
+print(10 - 100)
