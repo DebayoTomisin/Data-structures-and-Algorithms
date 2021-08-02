@@ -286,8 +286,8 @@ def mergeSorted(arr):
     return arr
 
 
-
 print(mergeSorted([1, 9, 2, 4, 1, 0, 19]))
+
 
 def mergeSort(arr):
     size = len(arr)
@@ -366,3 +366,29 @@ def insertion(arr):
 
 print(insertion([3, 8, 9, 0]))
 
+'''The Maximum SubArray Problem.'''
+
+class MaximSubArray:
+    def __init__(self, arr):
+        self.arr = arr
+
+
+    '''This is the brute force Approach to solving this problem'''
+
+    def BruteForce(self):
+        size = len(self.arr)
+        for i in range(size):
+            diff = 0
+            j = i + 1
+            for j in range(size):
+
+              leet = self.arr[j] - self.arr[i]
+              if leet > diff:
+                  diff = leet
+        return diff
+
+
+try1 = MaximSubArray([1, 2, 3, 4, 5])
+
+print('this is the solution to the brute force method')
+print(try1.BruteForce())
