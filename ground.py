@@ -375,17 +375,35 @@ class MaximSubArray:
 
     '''This is the brute force Approach to solving this problem'''
 
-    def BruteForce(self):
-        size = len(self.arr)
-        diff = 0
-        for i in range(size):
-            j = i + 1
-            for j in range(size):
+    # def BruteForce(self):
+    #     size = len(self.arr)
+    #     diff = 0
+    #     for i in range(size):
+    #         j = i + 1
+    #         for j in range(size):
+    #
+    #           leet = self.arr[j] + self.arr[i]
+    #           if leet > diff:
+    #               diff = leet
+    #     return diff
 
-              leet = self.arr[j] - self.arr[i]
-              if leet > diff:
-                  diff = leet
-        return diff
+    def findMaxCrossingSubArray(self, low, mid, high):
+        sum = 0
+        leftSum = 0
+        for i in range(low, mid):
+            sum = sum + self.arr[i]
+            if sum > leftSum:
+                leftSum = sum
+                maxLeft = i
+
+        sum = 0
+        rightSum = 0
+        for j in range(mid + 1, high):
+            sum = sum + self.arr[j]
+            if sum > rightSum:
+                rightSum = sum
+                maxRight = j
+        return (maxLeft,maxRight, leftSum + rightSum)
 
 
 try1 = MaximSubArray([100, 24, 10, 50])
