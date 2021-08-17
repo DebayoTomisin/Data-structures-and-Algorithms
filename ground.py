@@ -391,6 +391,7 @@ class MaximSubArray:
 def findMaxCrossingSubArray(arr, low, mid, high):
     sum = 0
     leftSum = 0
+    maxLeft = 0
     for i in range(low, mid):
         sum = sum + arr[i]
         if sum > leftSum:
@@ -399,6 +400,7 @@ def findMaxCrossingSubArray(arr, low, mid, high):
 
     sum = 0
     rightSum = 0
+    maxRight = 0
     for j in range(mid + 1, high):
         sum = sum + arr[j]
         if sum > rightSum:
@@ -412,8 +414,8 @@ def MaximsubArrayProblem(arr, low, high):
         return(low, high, arr[low])
     else:
         mid = int((low + high) / 2)
-        (leftLow, leftHigh, leftSum) = MaximSubArray(low=low, high=mid)
-        (rightLow, rightHigh, rightSum) = MaximSubArray(low= mid, high = high)
+        (leftLow, leftHigh, leftSum) = MaximsubArrayProblem(arr, low, mid)
+        (rightLow, rightHigh, rightSum) = MaximsubArrayProblem(arr, mid + 1, high)
         (crossLow, crossHigh, crossSum) = findMaxCrossingSubArray(arr, low, mid, high)
         if leftSum >= rightSum and leftSum >= crossSum:
             return (leftLow,leftHigh, leftSum)
@@ -424,6 +426,9 @@ def MaximsubArrayProblem(arr, low, high):
 
 
 print('')
+subArray = [1, -8, 10, 12, -6, 22, 3]
+print('The maximum subarray is set at: ')
+print(MaximsubArrayProblem(subArray, 0, len(subArray)))
 
 
 sea = ['main', 'peter', 'zee']

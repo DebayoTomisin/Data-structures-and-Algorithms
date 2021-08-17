@@ -13,3 +13,28 @@ that is meant to store the prices of these goods, if we pass in the names of our
     2. PES the hash function outputs 1
     3. COD the hash function outputs 0
     4. Cooking fever, the hash function outputs 2"""
+
+
+# Maximum sub array problem
+
+def crossSubArray(arr, low, mid, high):
+    sum = 0
+    maxLeft = 0
+    leftIndex = 0
+    
+    for i in range(low, mid):
+        sum += arr[i]
+        if sum >= maxLeft:
+            maxLeft = sum
+            leftIndex = i
+
+    sum = 0
+    maxRight = 0
+    rightIndex = 0
+    for j in range(mid + 1, high):
+        sum += arr[j]
+        if sum >= maxRight:
+            maxRight = sum
+            rightIndex = j
+
+    return(leftIndex, rightIndex, maxLeft + maxRight)
