@@ -18,23 +18,33 @@ that is meant to store the prices of these goods, if we pass in the names of our
 # Maximum sub array problem
 
 def crossSubArray(arr, low, mid, high):
-    sum = 0
+    addL = 0
     maxLeft = 0
     leftIndex = 0
     
-    for i in range(low, mid):
-        sum += arr[i]
-        if sum >= maxLeft:
-            maxLeft = sum
+    for i in range(low, mid + 1):
+        addL += arr[i]
+        # print(addL)
+        if addL > maxLeft:
+            maxLeft = addL
             leftIndex = i
+    print('the value of max left is', maxLeft)
 
-    sum = 0
+    addR = 0
     maxRight = 0
     rightIndex = 0
     for j in range(mid + 1, high):
-        sum += arr[j]
-        if sum >= maxRight:
-            maxRight = sum
+        print(j)
+        addR += arr[j]
+        # print(addR)
+        if addR > maxRight:
+            maxRight = addR
             rightIndex = j
+    print('the maximum value in right is', maxRight)
 
-    return(leftIndex, rightIndex, maxLeft + maxRight)
+    return leftIndex, rightIndex, maxLeft + maxRight
+
+
+array = [1, -6, 2, 9, 12, -22, 4]
+mid = int(0 + len(array) / 2)
+print(crossSubArray(array, 0, mid, len(array)))

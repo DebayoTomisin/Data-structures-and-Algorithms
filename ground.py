@@ -388,25 +388,27 @@ class MaximSubArray:
     #     return diff
 
 
-def findMaxCrossingSubArray(arr, low, mid, high):
-    sum = 0
+def findMaxCrossingSubArray(Arr, low, mid, high):
+    addL = 0
+    maxIndexL = 0
     leftSum = 0
-    maxLeft = 0
-    for i in range(low, mid):
-        sum = sum + arr[i]
-        if sum > leftSum:
-            leftSum = sum
-            maxLeft = i
 
-    sum = 0
+    for i in range(low, mid + 1):
+        addL += Arr[i]
+        if addL > leftSum:
+            leftSum = addL
+            maxIndexL = i
+
+    addR = 0
+    maxIndexR = 0
     rightSum = 0
-    maxRight = 0
+
     for j in range(mid + 1, high):
-        sum = sum + arr[j]
-        if sum > rightSum:
-            rightSum = sum
-            maxRight = j
-    return (maxLeft,maxRight, leftSum + rightSum)
+        addR += Arr[j]
+        if addR > rightSum:
+            rightSum = addR
+            maxIndexR = j
+    return maxIndexL, maxIndexR, leftSum + rightSum
 
 
 def MaximsubArrayProblem(arr, low, high):
