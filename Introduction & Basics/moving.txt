@@ -1,0 +1,5 @@
+Main strategies for Algorithm Design:
+
+1. Iteration: Algorithms that require double the operations if the input size increases by a single item are exponential
+2. Recursion: Using Recursion requires seeing how low a problem can beb stated in terms of itself. The key to understanding recursion and how it works is to find th base case
+    What is the smallest form of the problem you're trying to solve.

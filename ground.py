@@ -387,28 +387,68 @@ class MaximSubArray:
     #               diff = leet
     #     return diff
 
-    def findMaxCrossingSubArray(self, low, mid, high):
-        sum = 0
-        leftSum = 0
-        for i in range(low, mid):
-            sum = sum + self.arr[i]
-            if sum > leftSum:
-                leftSum = sum
-                maxLeft = i
 
-        sum = 0
-        rightSum = 0
-        for j in range(mid + 1, high):
-            sum = sum + self.arr[j]
-            if sum > rightSum:
-                rightSum = sum
-                maxRight = j
-        return (maxLeft,maxRight, leftSum + rightSum)
+def findMaxCrossingSubArray(arr, low, mid, high):
+    sum = 0
+    leftSum = 0
+    for i in range(low, mid):
+        sum = sum + arr[i]
+        if sum > leftSum:
+            leftSum = sum
+            maxLeft = i
+
+    sum = 0
+    rightSum = 0
+    for j in range(mid + 1, high):
+        sum = sum + arr[j]
+        if sum > rightSum:
+            rightSum = sum
+            maxRight = j
+    return (maxLeft,maxRight, leftSum + rightSum)
 
 
-try1 = MaximSubArray([100, 24, 10, 50])
+def MaximsubArrayProblem(arr, low, high):
+    if low == high:
+        return(low, high, arr[low])
+    else:
+        mid = int((low + high) / 2)
+        (leftLow, leftHigh, leftSum) = MaximSubArray(low=low, high=mid)
+        (rightLow, rightHigh, rightSum) = MaximSubArray(low= mid, high = high)
+        (crossLow, crossHigh, crossSum) = findMaxCrossingSubArray(arr, low, mid, high)
+        if leftSum >= rightSum and leftSum >= crossSum:
+            return (leftLow,leftHigh, leftSum)
+        elif rightSum >= leftSum and rightSum >= crossSum:
+            return (rightLow, rightHigh, rightSum)
+        else:
+            return(crossLow, crossHigh, crossSum)
 
-print('this is the solution to the brute force method')
-print(try1.BruteForce())
 
-print(10 - 100)
+print('')
+
+
+sea = ['main', 'peter', 'zee']
+fresh = ['alvin', 'dexter', 'nate']
+allResult = []
+
+
+
+
+
+print('')
+def fibonacci(n):
+    if n <= 2:
+        return 1
+    return fibonacci(n -1) + fibonacci(n - 2)
+
+# print(fibonacci(5))
+
+def palindrome (word):
+    if len(word) <= 1:
+        return True
+    if word[1] != word[-1]:
+        return False
+    w = word.pop(1, -1)
+    return palindrome(w)
+
+# print(palindrome('racecar'))
+
