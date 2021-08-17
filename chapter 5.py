@@ -16,6 +16,22 @@ that is meant to store the prices of these goods, if we pass in the names of our
 
 
 # Maximum sub array problem
+def maximSubArray(Arr, low, high):
+    if high == low:
+        return low, high, Arr[low]
+    else:
+        mid = int((0 + len(Arr)) / 2)
+        leftLow, leftHigh, leftSum = maximSubArray(Arr, low, mid)
+        rightLow, rightHigh, rightSum = maximSubArray(Arr, mid + 1, high)
+        crossLow, crossHigh, crossSum = crossSubArray(Arr, low, mid, high)
+
+        if leftSum > rightSum and leftSum > crossSum:
+            return leftLow, leftHigh, leftSum
+        elif rightSum > crossSum and rightSum > leftSum:
+            return rightLow, rightHigh, rightSum
+        else:
+            return crossLow, crossLow, crossSum
+
 
 def crossSubArray(arr, low, mid, high):
     addL = 0
@@ -44,7 +60,8 @@ def crossSubArray(arr, low, mid, high):
 
     return leftIndex, rightIndex, maxLeft + maxRight
 
-
 array = [1, -6, 2, 9, 12, -22, 4]
 mid = int(0 + len(array) / 2)
-print(crossSubArray(array, 0, mid, len(array)))
+# print(crossSubArray(array, 0, mid, len(array)))
+
+print(maximSubArray(array, 0, len(array) - 1))

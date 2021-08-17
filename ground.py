@@ -411,43 +411,45 @@ def findMaxCrossingSubArray(Arr, low, mid, high):
     return maxIndexL, maxIndexR, leftSum + rightSum
 
 
-def MaximsubArrayProblem(arr, low, high):
+def maximSubArray(Arr, low, high):
     if low == high:
-        return(low, high, arr[low])
+        return low, high, arr[low]
     else:
-        mid = int((low + high) / 2)
-        (leftLow, leftHigh, leftSum) = MaximsubArrayProblem(arr, low, mid)
-        (rightLow, rightHigh, rightSum) = MaximsubArrayProblem(arr, mid + 1, high)
-        (crossLow, crossHigh, crossSum) = findMaxCrossingSubArray(arr, low, mid, high)
+        mid = int((0 + len(Arr)) / 2)
+        (leftLow, leftHigh, leftSum) = maximSubArray(Arr, low, mid)
+        (rightLow, rightHigh, rightSum) = maximSubArray(Arr, mid + 1, high)
+        (crossLow, crossHigh, crossSum) = findMaxCrossingSubArray(Arr, low, mid, high)
+
         if leftSum >= rightSum and leftSum >= crossSum:
-            return (leftLow,leftHigh, leftSum)
-        elif rightSum >= leftSum and rightSum >= crossSum:
-            return (rightLow, rightHigh, rightSum)
+            return leftLow, leftHigh, leftSum
+        elif rightSum >= crossSum and rightSum >= leftSum:
+            return rightLow, rightHigh, rightSum
         else:
-            return(crossLow, crossHigh, crossSum)
+            return crossLow, crossHigh, crossSum
+
 
 
 print('')
-subArray = [1, -8, 10, 12, -6, 22, 3]
+subArray = [1, 2, 3]
+mid = int((0 + len(subArray)) / 2)
 print('The maximum subarray is set at: ')
-print(MaximsubArrayProblem(subArray, 0, len(subArray)))
-
+# print(findMaxCrossingSubArray(subArray, 0, mid, len(subArray)))
+print(maximSubArray(subArray, 0, len(subArray)))
 
 sea = ['main', 'peter', 'zee']
 fresh = ['alvin', 'dexter', 'nate']
 allResult = []
 
-
-
-
-
 print('')
+
+
 def fibonacci(n):
     if n <= 2:
         return 1
     return fibonacci(n -1) + fibonacci(n - 2)
 
 # print(fibonacci(5))
+
 
 def palindrome (word):
     if len(word) <= 1:
