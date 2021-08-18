@@ -19,6 +19,8 @@ that is meant to store the prices of these goods, if we pass in the names of our
 def maximSubArray(Arr, low, high):
     if high == low:
         return low, high, Arr[low]
+    elif len(Arr) == 0:
+        return []
     else:
         mid = int((0 + len(Arr)) / 2)
         leftLow, leftHigh, leftSum = maximSubArray(Arr, low, mid)
@@ -60,8 +62,33 @@ def crossSubArray(arr, low, mid, high):
 
     return leftIndex, rightIndex, maxLeft + maxRight
 
-array = [1, -6, 2, 9, 12, -22, 4]
+array = [1, -3, 7, 9, -2]
 mid = int(0 + len(array) / 2)
-# print(crossSubArray(array, 0, mid, len(array)))
 
-print(maximSubArray(array, 0, len(array) - 1))
+print(crossSubArray(array, 0, mid, len(array)))
+
+# print(maximSubArray(array, 0, len(array) - 1))
+
+
+def bruteForce(Arr):
+    lowIndex = 0
+    hightIndex = 0
+    low = 0
+    high = len(Arr)
+    for i in range(low, high):
+        sum = Arr[i]
+        # print(sum)
+        maxSum = 0
+        for j in range(i + 1, high):
+            # print('the value of j is', Arr[j])
+            sum += Arr[j]            # print(sum)
+            if sum > maxSum:
+                maxSum = sum
+                lowIndex = i
+                hightIndex = j
+        return lowIndex, hightIndex, maxSum
+
+print('')
+print('testing the brute force solution')
+Array = [1, 2, -4, 7]
+print(bruteForce(array))
