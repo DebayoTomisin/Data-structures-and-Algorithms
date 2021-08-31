@@ -73,3 +73,13 @@ def MaximumSubArray(arr, low, high):
 
 arr1 = [4]
 print(MaximumSubArray(arr1, 0, len(arr1)))
+
+
+def factorial(n):
+    if n < 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+print(factorial(4))
