@@ -55,3 +55,21 @@ def CrossingSubArray(arr, low, mid, high):
             maxRightIndex = j
 
     return maxLeftIndex, maxRightIndex, maxLeft + maxRight
+
+
+def MaximumSubArray(arr, low, high):
+    if len(arr) < 2:
+        return low, high, arr[low]
+    elif len(arr) == 0:
+        return 'Array is empty'
+    else:
+        mid = int(high / 2)
+        leftLowIndex, leftHighIndex, leftSum = MaximumSubArray(arr, low, mid + 1)
+        rightLowIndex, rightHighIndex, rightSum = MaximumSubArray(arr, mid + 1, high - 1)
+        crossLowIndex, crossHighIndex, crossSum = CrossingSubArray(arr, low, mid, high)
+
+
+
+
+arr1 = [4]
+print(MaximumSubArray(arr1, 0, len(arr1)))
