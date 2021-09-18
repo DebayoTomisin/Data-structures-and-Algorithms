@@ -38,7 +38,7 @@ def MaxiumEl(arr):
 
 def MiniEl(arr):
     n = len(arr)
-    smallest = 0
+    smallest = arr[0]
     for i in range(n):
         if arr[i] < smallest:
             smallest = arr[i]
