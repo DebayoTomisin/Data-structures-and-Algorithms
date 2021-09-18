@@ -44,3 +44,21 @@ def MiniEl(arr):
             smallest = arr[i]
     return smallest
 
+
+"""Find the second largest number in the list."""
+
+def SecondLargest(arr):
+    n = len(arr)
+    largest = arr[0]
+
+    for i in range(n):
+        if largest < arr[i]:
+            largest = arr[i]
+    arr.remove(largest)
+    secondLargest = arr[0]
+    for i in range(len(arr)):
+        if secondLargest < arr[i]:
+            secondLargest = arr[i]
+    return secondLargest
+
+print(SecondLargest(array))
