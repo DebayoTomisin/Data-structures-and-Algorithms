@@ -23,4 +23,24 @@ def TwoDSum(arr):
            sum += j
     return sum
 
-"""FFind the largest element in a list"""
+"""Find the largest element in a list"""
+
+def MaxiumEl(arr):
+    n = len(arr)
+    largest = 0
+    for i in range(n):
+        if arr[i] > largest:
+            largest = arr[i]
+    return largest
+
+
+"""Find the smallest element in the list"""
+
+def MiniEl(arr):
+    n = len(arr)
+    smallest = 0
+    for i in range(n):
+        if arr[i] < smallest:
+            smallest = arr[i]
+    return smallest
+
