@@ -61,4 +61,27 @@ def SecondLargest(arr):
             secondLargest = arr[i]
     return secondLargest
 
-print(SecondLargest(array))
+
+"""Print all the maxima’s in a list. (A value is a maximum if the value before and after its index are smaller than it is or does not exist.)"""
+
+
+def Maxima(arr):
+    maxArr = []
+    n = len(arr)
+    if n == 1:
+        return arr[0]
+    else:
+        if (arr[0] > arr[1]):
+            maxArr.append(0)
+
+        for i in range(1, n -1 ):
+            if (arr[i-1] < arr[i] > arr[i + 1]):
+                maxArr.append(i)
+
+        if ( arr[-1] > arr[-2]):
+            maxArr.append(-1)
+
+        return maxArr
+
+
+print(Maxima(array))
