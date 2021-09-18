@@ -3,3 +3,11 @@ Main strategies for Algorithm Design:
 1. Iteration: Algorithms that require double the operations if the input size increases by a single item are exponential
 2. Recursion: Using Recursion requires seeing how low a problem can beb stated in terms of itself. The key to understanding recursion and how it works is to find th base case
     What is the smallest form of the problem you're trying to solve.
+3. Brute Force : Exactly as the name states, this means going through the problem with the mindset that, you have enough computing power to take on the problem.
+    The brute force strategy solves problems by inspecting all of the problem's possible solution candidates.
+4. Back Tracking: This involves checking the last move or operation in a case where there is an error in the operations and then correcting the last operation that could have caused the error.
+    This works best in situations where the solutions is as a result of various choices and making a choice constrains other choices.It identifies as soon as possible the choices you've made cannot give you
+    the solution you want, so you can sooner step back and try something else. Fail early, fail often.
+5. Hueristics: This is a method that does not guarantee an optimal or best solution. Take for example, playing a game of chess, you cannot always have the best move but you have the move that is good enough to
+    assure you of the win.
+6. Divide and Conquer: This involves dividing the problem into sub problems and then solving those sub problems and combining the results of the sub-problems to give the actual result.
