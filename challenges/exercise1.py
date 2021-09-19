@@ -2,6 +2,7 @@ import math
 """Here I'll be tackling all the exercise questions from Problem solving in DS and Algorithms  chapter 1"""
 array = [1, 9, -5, 0, 12, 4]
 array2 = [[1, 4, 6], [2, 3, -8, 1]]
+array0 = [1, 0, 1, 0, 1, 1, 0, 0]
 """1.  Find average of all the elements in a list """
 
 def Average(arr):
@@ -85,3 +86,19 @@ def Maxima(arr):
 
 
 print(Maxima(array))
+
+"""Given a list with value 0 or 1, write a program to segregate 0 on the left side and 1 on the right side."""
+
+
+def selection_sort(arr):
+    size = len(arr)
+    for i in range(size):
+        ix = i
+        for j in range(i + 1, size):
+            if arr[ix] > arr[j]:
+                ix = j
+        arr[i], arr[ix] = arr[ix], arr[i]
+    return arr
+
+
+print(selection_sort(array0))
