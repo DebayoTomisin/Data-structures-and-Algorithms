@@ -103,3 +103,42 @@ def quickSort(arr):
 
 Arr = [1, 9, 0, 7, 2, -3, 8, -11]
 print(quickSort(Arr))
+
+
+def binarySearch(arr, value):
+    if len(arr) < 1:
+        return []
+    else:
+        if len(arr) == 1:
+            if value == arr[0]:
+                return True
+            else:
+                return False
+        high = len(arr) - 1
+        low = 0
+        mid = int(high / 2)
+        return binarySearch(arr[low: mid], value)
+
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print('fibonacii')
+print(fibonacci(1))
+
+
+def powersof2(n):
+    if n < 1:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        prev = powersof2(n / 2)
+        curr = prev * 2
+        return curr
+
+print(powersof2(4))
