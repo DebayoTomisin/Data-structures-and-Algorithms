@@ -116,5 +116,20 @@ def reverseOrder(arr):
     return arr
 
 
-print(array)
-print(reverseOrder(array))
+"""Given a list of 0s and 1s. We need to sort it so that all the 0s are before all the 1s. in O(1) time"""
+
+def sortBinary(arr):
+    start = 0
+    end = len(arr) - 1
+    while start <= end:
+        if arr[start] == 1 and arr[end] == 0:
+            i = arr[start]
+            ix = arr[end]
+            arr[start] = ix
+            arr[end] = i
+            end -= 1
+        start += 1
+    return arr
+
+print(array0)
+print(sortBinary(array0))
