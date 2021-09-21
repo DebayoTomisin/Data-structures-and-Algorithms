@@ -3,6 +3,7 @@ import math
 array = [1, 9, -5, 0, 12, 4]
 array2 = [[1, 4, 6], [2, 3, -8, 1]]
 array0 = [1, 0, 1, 0, 1, 1, 0, 0]
+array3 = [1, 2, 0, 2, 1, 2, 0, 1, 1, 2, 1, 0]
 """1.  Find average of all the elements in a list """
 
 def Average(arr):
@@ -131,5 +132,24 @@ def sortBinary(arr):
         start += 1
     return arr
 
-print(array0)
-print(sortBinary(array0))
+
+
+"""Sorting to base 2"""
+
+def base2Sort(arr):
+     start = 0
+     end = len(arr) - 1
+
+     while start <= end:
+         if arr[start] == 2 and (arr[end] == 0 or arr[end] == 1):
+             i = arr[start]
+             ix = arr[end]
+             arr[start] = ix
+             arr[end] = i
+         start += 1
+         end -= 1
+     return arr
+
+
+print(array3)
+print(base2Sort(array3))
