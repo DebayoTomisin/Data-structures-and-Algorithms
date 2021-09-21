@@ -101,4 +101,20 @@ def selection_sort(arr):
     return arr
 
 
-print(selection_sort(array0))
+"""Reverse a list in-place. (You cannot use any additional list in other words Space Complexity should be O(1). )"""
+
+def reverseOrder(arr):
+    start = 0
+    end = len(arr) - 1
+    while start <= end:
+        i = arr[start]
+        ix = arr[end]
+        arr[start] = ix
+        arr[end] = i
+        start += 1
+        end -= 1
+    return arr
+
+
+print(array)
+print(reverseOrder(array))
