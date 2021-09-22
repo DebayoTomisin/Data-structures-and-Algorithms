@@ -157,5 +157,33 @@ def base2Sort(arr):
      return arr
 
 
-print(array3)
-print(base2Sort(array3))
+
+"""Find the duplicate elements in a list of size n where each element is in the range 0 to n-1."""
+
+def duplicateElements(arr): # approach one
+    size = len(arr)
+    duplicates = []
+    for i in range(size):
+        for j in range(i+ 1, size):
+            if arr[i] == arr[j]:
+                duplicates.append(arr[i])
+    return duplicates
+
+def duplicateTwo(arr):
+     hash = {}
+     for x in arr:
+         if x != hash.keys():
+            hash[x] = 1
+         else:
+             hash[x] += 1
+     return hash
+
+
+def duplicateThree(arr):
+    for i in range(len(arr)):
+        array[i] = 0
+    for j in range(len(arr)):
+        array[j] += 1
+
+
+print(duplicateThree([2, 7, 2, 3, 18, 6]))
