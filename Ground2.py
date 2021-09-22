@@ -91,3 +91,21 @@ def sumDigits(n):
     return sum
 
 print(sumDigits(-1))
+
+def binarySearch(arr, low, high, value):
+    if high >= low:
+        mid = int((high + low )/ 2)
+        if arr[mid] == value:
+            return True
+        elif arr[mid] > value:
+            return binarySearch(arr, low, mid - 1, value)
+        else:
+            return binarySearch(arr, mid + 1, high, value)
+    else:
+        return -1
+
+
+print(binarySearch([0, 3, 6, 9, 10, 22], 0, 5, 11))
+
+def recursiveSearch(arr, low, high, value):
+    if high >= low:
