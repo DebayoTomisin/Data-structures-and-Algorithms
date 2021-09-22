@@ -141,12 +141,18 @@ def base2Sort(arr):
      end = len(arr) - 1
 
      while start <= end:
-         if arr[start] == 2 and (arr[end] == 0 or arr[end] == 1):
+         if (arr[start] == 2 or arr[start] == 1) and arr[end] == 0:
              i = arr[start]
              ix = arr[end]
              arr[start] = ix
              arr[end] = i
-         start += 1
+             start += 1
+         # if arr[start] == 2 and arr[end] == 1:
+         #     j = arr[start]
+         #     jx = arr[end]
+         #     arr[start] = jx
+         #     arr[end] = j
+
          end -= 1
      return arr
 

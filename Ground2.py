@@ -105,7 +105,19 @@ def binarySearch(arr, low, high, value):
         return -1
 
 
-print(binarySearch([0, 3, 6, 9, 10, 22], 0, 5, 11))
+print(binarySearch([0, 3, 6, 9, 10, 22], 0, 5, 22))
+
 
 def recursiveSearch(arr, low, high, value):
     if high >= low:
+
+        mid = int((low + high) / 2)
+        if arr[mid] == value:
+            return True, mid
+        elif arr[mid] > value:
+            return binarySearch(arr, low, mid - 1, value)
+        else:
+            return binarySearch(arr, mid + 1, high, value)
+    else:
+        return -1
+
