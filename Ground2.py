@@ -1,3 +1,4 @@
+import math
 matrix_a = [[2, 4, 1], [1, 1, 1]]
 matrix_b = [[1, 2, 1], [1, 1, 1]]
 n = len(matrix_a)
@@ -135,4 +136,14 @@ def brutePositive():
                         print(a, b, c, d)
 
 
-brutePositive()
+def slightlyOptimized():
+    n = 1000
+    for a in range(1, n):
+        for b in range(1, n):
+            for c in range(1, n):
+                d = math.pow(a**3 + b**3 + c**3, 1/3)
+                if a ** 3 + b ** 3 == c ** 3 + d ** 3:
+                    print(a, b, c, d)
+
+
+slightlyOptimized()
