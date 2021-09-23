@@ -121,3 +121,18 @@ def recursiveSearch(arr, low, high, value):
     else:
         return -1
 
+
+"""Print all positive integer solutions to the equation a3 + b3 and d are integers between 1 and 1000."""
+
+
+def brutePositive():
+    n = 1000
+    for a in range(1, n):
+        for b in range(1, n):
+            for c in range(1, n):
+                for d in range(1, n):
+                    if a**3 + b**3 == c**3 + d**3:
+                        print(a, b, c, d)
+
+
+brutePositive()
