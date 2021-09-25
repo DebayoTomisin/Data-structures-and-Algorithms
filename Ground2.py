@@ -1,13 +1,14 @@
 import math
+from itertools import combinations
+
 matrix_a = [[2, 4, 1], [1, 1, 1]]
 matrix_b = [[1, 2, 1], [1, 1, 1]]
 n = len(matrix_a)
 """The Below is the brute force approach to multiplying square matrices."""
-print(matrix_a)
+# print(matrix_a)
 lenA = len(matrix_a[0])
 print(" ")
 lenB = len(matrix_b[0])
-
 
 """This is the brute force approach to solving maximum sub array problem"""
 
@@ -28,9 +29,10 @@ def maxSubArray(arr):
 
 
 arr = [1, -6, 8, 9, 1]
-print(maxSubArray(arr))
+# print(maxSubArray(arr))
 
 """The divide and conquer approach to this problem"""
+
 
 def CrossingSubArray(arr, low, mid, high):
     maxLeft = 0
@@ -70,10 +72,10 @@ def MaximumSubArray(arr, low, high):
         crossLowIndex, crossHighIndex, crossSum = CrossingSubArray(arr, low, mid, high)
 
 
-
-
 arr1 = [4]
-print(MaximumSubArray(arr1, 0, len(arr1)))
+
+
+# print(MaximumSubArray(arr1, 0, len(arr1)))
 
 
 def factorial(n):
@@ -83,19 +85,20 @@ def factorial(n):
         return n * factorial(n - 1)
 
 
-
 def sumDigits(n):
     sum = 0
-    while(n < 0):
+    while (n < 0):
         sum += n % 10
         n /= 10
     return sum
 
+
 print(sumDigits(-1))
+
 
 def binarySearch(arr, low, high, value):
     if high >= low:
-        mid = int((high + low )/ 2)
+        mid = int((high + low) / 2)
         if arr[mid] == value:
             return True
         elif arr[mid] > value:
@@ -106,7 +109,7 @@ def binarySearch(arr, low, high, value):
         return -1
 
 
-print(binarySearch([0, 3, 6, 9, 10, 22], 0, 5, 22))
+# print(binarySearch([0, 3, 6, 9, 10, 22], 0, 5, 22))
 
 
 def recursiveSearch(arr, low, high, value):
@@ -132,18 +135,53 @@ def brutePositive():
         for b in range(1, n):
             for c in range(1, n):
                 for d in range(1, n):
-                    if a**3 + b**3 == c**3 + d**3:
+                    if a ** 3 + b ** 3 == c ** 3 + d ** 3:
                         print(a, b, c, d)
 
 
 def slightlyOptimized():
     n = 1000
+
     for a in range(1, n):
         for b in range(1, n):
             for c in range(1, n):
-                d = math.pow(a**3 + b**3 + c**3, 1/3)
+                d = math.pow(a ** 3 + b ** 3 + c ** 3, 1 / 3)
                 if a ** 3 + b ** 3 == c ** 3 + d ** 3:
                     print(a, b, c, d)
 
 
-slightlyOptimized()
+# slightlyOptimized()
+
+def moreOptimzied():
+    n = 10
+    dict = {}
+    for c in range(1, n):
+        for d in range(1, n):
+            result = c ** 3 + d ** 3
+            dict[result] = (c, d)
+    for a in range(1, n):
+        for b in range(1, n):
+            result = a**3 + b**3
+            for key in dict.keys():
+                if result == key:
+                    print(result, a, b)
+
+
+print(moreOptimzied())
+
+lst = [6, 8, 9, 10]
+
+# def sumCombinations(arr):
+#     array = {}
+#     for i in range(len(arr)):
+#         for j in range(1, len(arr)):
+#             sum2 = arr[i] + arr[j]
+#             print(sum2)
+#             if sum2 == array.keys():
+#                 print('this item has already been added ')
+#             else:
+#                 print('new item added')
+#
+#
+# print(" ")
+# sumCombinations(lst)
