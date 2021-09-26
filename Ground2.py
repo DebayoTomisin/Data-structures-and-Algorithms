@@ -167,8 +167,6 @@ def moreOptimzied():
                     print(result, a, b)
 
 
-print(moreOptimzied())
-
 lst = [6, 8, 9, 10]
 
 # def sumCombinations(arr):
@@ -185,3 +183,22 @@ lst = [6, 8, 9, 10]
 #
 # print(" ")
 # sumCombinations(lst)
+
+"""find all pairs with sum k within an array (assuming all distinct elements)."""
+
+
+def pairsum(arr, k):
+    n = len(arr)
+    hash= {}
+    pairs = []
+    for i in range(n):
+        hash[arr[i]] = arr[i]
+    for j in range(1, n):
+        if arr[j - 1] + hash[arr[j]] == k:
+            pairs.append((arr[j - 1], hash[arr[j]]))
+    return pairs
+
+
+
+print(lst)
+print(pairsum(lst, 15))
