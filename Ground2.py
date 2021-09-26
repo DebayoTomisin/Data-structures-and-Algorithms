@@ -167,7 +167,7 @@ def moreOptimzied():
                     print(result, a, b)
 
 
-lst = [6, 8, 9, 10]
+lst = [6, 8, 9, 10, 12]
 
 # def sumCombinations(arr):
 #     array = {}
@@ -199,6 +199,17 @@ def pairsum(arr, k):
     return pairs
 
 
+def improvedPairsum(arr, value):
+    n = len(arr)
+    hash = {}
+    for i in range(n):
+        hash[i] = arr[i]
+    print(hash)
+    for j in arr:
+        diff = value - j
+        if diff in hash.values():
+            print(j, diff)
+
 
 print(lst)
-print(pairsum(lst, 15))
+print(improvedPairsum(lst, 20))
