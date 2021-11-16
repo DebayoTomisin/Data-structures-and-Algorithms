@@ -191,9 +191,22 @@ def duplicateThree(arr):
 
 """Find the maximum element in a sorted and rotated list."""
 rotated = [33, 30, 28, 22, 19, 15, 8, 6, 2]
-# def MaximRotatedList(arr, low, high):
-#     if len(arr) > 2:
-#        mid =
+low = 0
+high = len(rotated)
+
+def MaximRotatedList(arr, low, high, value):
+    if len(arr) > 2:
+       if high >= low:
+           mid = int((high + low) / 2)
+           if arr[mid] > value:
+               value = arr[mid]
+               return MaximRotatedList(arr, mid, high, value)
+           elif arr[mid] < value:
+               return MaximRotatedList(arr, low, mid, value)
+    else:
+        return arr[0]
+
+
 
 def MaximRotatedListBrute(arr):
     maxim = 0
@@ -202,4 +215,4 @@ def MaximRotatedListBrute(arr):
             maxim = arr[i]
     return maxim
 
-print(MaximRotatedListBrute(rotated))
+print(MaximRotatedList(rotated))
