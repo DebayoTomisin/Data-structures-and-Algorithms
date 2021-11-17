@@ -44,23 +44,3 @@ array1 = [1, 4, 5, 9, 11, 18, 22]
 
 
 
-"""A string has unique values"""
-strone = 'abba'
-
-def uniqueStr(string):
-    for i in range(len(string)):
-        for j in range(i + 1, len(string)):
-            if string[i] == string[j]:
-                return 'String is not unique'
-    return 'string is unique'
-
-print(uniqueStr(strone))
-
-def optimizedStr(string):
-    for i in range(len(string) - 1):
-        if string[i] == string[i + 1]:
-            return 'String is not unique'
-    return 'string is unique'
-
-print('')
-print(optimizedStr(strone))

@@ -215,4 +215,52 @@ def MaximRotatedListBrute(arr):
             maxim = arr[i]
     return maxim
 
-print(MaximRotatedList(rotated))
+# print(MaximRotatedList(rotated))
+
+
+'''The following are questions from the array and string chapter of cracking the coding interview'''
+
+"""A string has unique values"""
+strone = 'abba'
+
+
+def uniqueStr(string):
+    for i in range(len(string)):
+        for j in range(i + 1, len(string)):
+            if string[i] == string[j]:
+                return 'String is not unique'
+    return 'string is unique'
+
+# print(uniqueStr(strone))
+
+
+def optimizedStr(string):
+    for i in range(len(string) - 1):
+        if string[i] == string[i + 1]:
+            return 'String is not unique'
+    return 'string is unique'
+
+print('')
+# print(optimizedStr(strone))
+print('')
+
+'''Given 2 strings, decide if one is a permutation of the other'''
+string1 = 'dog'
+string2 = 'god'
+
+
+def PermutationStr(str1, str2):
+    sorted1 = ''.join(sorted(str1))
+    sorted2 = ''.join(sorted(str2))
+
+    if len(sorted1) != len(sorted2):
+        return False
+
+    for i in range(len(sorted1)):
+        if sorted1[i] == sorted2[i]:
+            return True
+        else:
+            return False
+
+
+print(PermutationStr(string1, string2))
