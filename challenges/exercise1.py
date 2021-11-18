@@ -246,7 +246,7 @@ print('')
 
 '''Given 2 strings, decide if one is a permutation of the other'''
 string1 = 'dog'
-string2 = 'god'
+string2 = 'G o d '
 
 
 def PermutationStr(str1, str2):
@@ -264,3 +264,18 @@ def PermutationStr(str1, str2):
 
 
 print(PermutationStr(string1, string2))
+
+
+'''Write a method to replace all spaces in a string with '%20'.'''
+
+
+def StrReplacement(string):
+    for i in range(len(string)):
+        if string[i] == ' ':
+            string = string.replace(string[i], '%20')
+    return string
+
+print('')
+print(StrReplacement(string1))
+print('')
+print(StrReplacement(string2))
