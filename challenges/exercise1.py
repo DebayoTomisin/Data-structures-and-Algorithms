@@ -307,3 +307,27 @@ def removeDuplicates(arr):
 
 test_arr = [1, 1, 2, 4, 8, 8]
 print(removeDuplicates(test_arr))
+
+
+'''Given a string, write a function to check if it is a permutation of a palindrome'''
+
+
+def PalindromePermutation(string):
+    hashtable = {}
+    count = 0
+    for i in range(len(string)):
+        if string[i] not in hashtable.keys():
+            hashtable[string[i]] = 1
+        else:
+            hashtable[string[i]] += 1
+    for item in hashtable.values():
+        if item % 2 == 1:
+            count += 1
+    if count > 1:
+        return False
+    else:
+        return True
+
+
+print(' ')
+print(PalindromePermutation('beiber'))

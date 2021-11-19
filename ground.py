@@ -432,9 +432,9 @@ def maximSubArray(Arr, low, high):
 print('')
 subArray = [1, 2, 3]
 mid = int((0 + len(subArray)) / 2)
-print('The maximum subarray is set at: ')
+# print('The maximum subarray is set at: ')
 # print(findMaxCrossingSubArray(subArray, 0, mid, len(subArray)))
-print(maximSubArray(subArray, 0, len(subArray)))
+# print(maximSubArray(subArray, 0, len(subArray)))
 
 sea = ['main', 'peter', 'zee']
 fresh = ['alvin', 'dexter', 'nate']
@@ -450,8 +450,9 @@ def fibonacci(n):
 
 # print(fibonacci(5))
 
-
-def palindrome (word):
+print('')
+print('')
+def palindrome(word):
     if len(word) <= 1:
         return True
     if word[1] != word[-1]:
@@ -459,5 +460,7 @@ def palindrome (word):
     w = word.pop(1, -1)
     return palindrome(w)
 
-# print(palindrome('racecar'))
+
+print('')
+print(palindrome('racecar'))
 
