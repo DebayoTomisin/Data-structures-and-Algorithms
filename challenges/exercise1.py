@@ -344,14 +344,36 @@ def EditChecker(item1, item2):
     if item1 == item2:
         return True
 
-    edit_count = 0
+    replace_count = 0
     if len(item1) == len(item2):
         for i in range(len(item1)):
             if item1[i] != item2[i]:
-                edit_count += 1
-        if edit_count >= 2:
+                replace_count += 1
+        if replace_count >= 2:
             return False
         return True
 
+    length1 = len(item1)
+    length2 = len(item2)
 
-print(EditChecker('pale', 'bale'))
+    if abs(length1 - length2 > 1):
+        return False
+    index1 = 0
+    index2 = 0
+    while index1 < length1 and index2 < length2:
+        if item1[index1] != item2[index2]:
+            if index1 != index2:
+                return False
+
+            if length2 > length1:
+                index2 += 1
+            else:
+                index1 += 1
+        else:
+            index2 += 1
+            index1 += 1
+    return True
+
+
+print('')
+print(EditChecker('aplee', 'apled'))
