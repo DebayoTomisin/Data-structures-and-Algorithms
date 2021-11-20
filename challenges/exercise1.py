@@ -330,4 +330,28 @@ def PalindromePermutation(string):
 
 
 print(' ')
-print(PalindromePermutation('beiber'))
+# print(PalindromePermutation('racecar'))
+
+print('')
+
+
+'''There are three types of edits that can be performed on strings: insert a character,
+remove a character, or replace a character. Given two strings, write a function to check if they are
+one edit (or zero edits) away.'''
+
+
+def EditChecker(item1, item2):
+    if item1 == item2:
+        return True
+
+    edit_count = 0
+    if len(item1) == len(item2):
+        for i in range(len(item1)):
+            if item1[i] != item2[i]:
+                edit_count += 1
+        if edit_count >= 2:
+            return False
+        return True
+
+
+print(EditChecker('pale', 'bale'))
