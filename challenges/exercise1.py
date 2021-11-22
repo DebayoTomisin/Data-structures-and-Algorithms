@@ -1,4 +1,5 @@
 import math
+from io import StringIO
 
 """Here I'll be tackling all the exercise questions from Problem solving in DS and Algorithms  chapter 1"""
 array = [1, 9, -5, 0, 12, 4]
@@ -430,3 +431,26 @@ print('')
 print(optimizedProfit1([1, 2]))
 print('')
 print(MaximumProfit1([7, 1, 5, 3, 6, 4]))
+
+
+'''Implement a method to perform basic string compression using the counts
+of repeated characters. For example, the string aabcccccaaa would become a2blc5a3'''
+
+def RepeatedString(string):
+    compressed = ''
+    count = 0
+    for i in range(len(string) - 1):
+        count += 1
+        if string[i] != string[i + 1]:
+            compressed += (string[i])
+            compressed += (str(count))
+            count = 0
+    if len(compressed) > len(string):
+        return string
+    return compressed
+
+
+print('')
+print('this is the solution for compressed strings')
+print('')
+print(RepeatedString('aabcccccaaaab '))
