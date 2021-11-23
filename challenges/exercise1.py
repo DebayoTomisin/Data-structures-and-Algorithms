@@ -439,9 +439,10 @@ of repeated characters. For example, the string aabcccccaaa would become a2blc5a
 def RepeatedString(string):
     compressed = ''
     count = 0
+    n = len(string)
     for i in range(len(string) - 1):
         count += 1
-        if string[i] != string[i + 1]:
+        if string[i] != string[i + 1] or i == n:
             compressed += (string[i])
             compressed += (str(count))
             count = 0
@@ -453,4 +454,4 @@ def RepeatedString(string):
 print('')
 print('this is the solution for compressed strings')
 print('')
-print(RepeatedString('aabcccccaaaab '))
+print(RepeatedString('aabcccccaaa '))
