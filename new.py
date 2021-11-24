@@ -23,7 +23,7 @@ def duplicate(arr):  # finds the duplicate values in the list
 def del_negative(arr):  # deletes negative values found in the list
     for i in range(len(arr) - 1):
         if arr[i] < 0:
-            del(arr[i])
+            del (arr[i])
     return arr
 
 
@@ -75,7 +75,6 @@ print('This is a test with duplicate values: ', formatted(array2))
 print('')
 print('This is a test with a good input list: ', formatted(array3))
 
-
 """Write a program that calculates the sum of numbers recursively"""
 
 
@@ -89,7 +88,6 @@ def sum_recursive(arr):
 print('')
 print(array2)
 print(sum_recursive(array2))
-
 
 """Write a function that converts a number to any base"""
 
@@ -199,14 +197,52 @@ def maxim_num(arr):
     return index
 
 
-print('This is array 1', array2)
-print('maximum value in this array is set at ', maxim_num(array2))
-num = [3]
-print('')
-print('the base case of the maximum number function is,', maxim_num(num))
-sort_list = [1, 3, 4, 9, 10, 19]
-print('The result of the binary search algorithm is ', binary_search(sort_list, 9))
-print('')
-print('')
-print('the recursive binary search is ', binary_DC(sort_list, 9))
+# print('This is array 1', array2)
+# print('maximum value in this array is set at ', maxim_num(array2))
+# num = [3]
+# print('')
+# print('the base case of the maximum number function is,', maxim_num(num))
+# sort_list = [1, 3, 4, 9, 10, 19]
+# print('The result of the binary search algorithm is ', binary_search(sort_list, 9))
+# print('')
+# print('')
+# print('the recursive binary search is ', binary_DC(sort_list, 9))
 
+
+'''Singly Linked List Implementation'''
+
+
+class Node:
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        newNode = Node(data)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = newNode
+        else:
+            self.head = newNode
+
+    def printLL(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+
+
+print('')
+print('')
+LL = LinkedList()
+LL.insert(3)
+LL.insert(4)
+LL.insert(5)
+LL.printLL()
