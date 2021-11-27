@@ -243,7 +243,7 @@ def uniqueStr(string):
     return 'string is unique'
 
 
-# print(uniqueStr(strone))
+print(uniqueStr(strone))
 
 
 def optimizedStr(string):
@@ -259,7 +259,7 @@ print('')
 
 '''Given 2 strings, decide if one is a permutation of the other'''
 string1 = 'dog'
-string2 = 'G o d '
+string2 = 'gdf '
 
 
 def PermutationStr(str1, str2):
@@ -396,7 +396,7 @@ def MaximumProft2(arr):
 
 
 print('')
-print(MaximumProft2([7, 1, 5, 3, 6, 4]))
+print(MaximumProft2([7, 1, 5, 3, 6, 4, 8]))
 
 
 '''You are given an array prices where prices[i] is the price of a given stock on the ith day.
