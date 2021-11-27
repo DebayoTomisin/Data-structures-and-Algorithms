@@ -4,24 +4,17 @@
 
 
 def reverseVowels(string):
-    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowels = 'aeiouAEIOU'
+    v, k = [], [],
     string = list(string)
-    index = []
-    vowel = []
     for i in range(len(string)):
         if string[i] in vowels:
-            vowel.append(string[i])
-            index.append(i)
-    vowel = vowel[::-1]
-    final =[]
-    ind = 0
-    for i in range(len(string)):
-        if i in index:
-            final.append(vowel[ind])
-            ind += 1
-        else:
-            final.append(string[i])
-    return "".join(final)
+            v.append(string[i])
+            k.append(i)
+    v = v[::-1]  # this is the process of reversing the list
+    for i in range(len(k)):
+        string[k[i]] = v[i]
+    return ''.join(string)
 
 
 print(reverseVowels('hello'))
