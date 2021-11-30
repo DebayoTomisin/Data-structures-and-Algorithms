@@ -455,3 +455,14 @@ print('')
 print('this is the solution for compressed strings')
 print('')
 print(RepeatedString('aabcccccaaa '))
+
+'''A fixed point in an array is an element whose value is equal to its index. Given a sorted array of distinct elements, 
+return a fixed point, if one exists. Otherwise, return False'''
+
+
+def EqualIndex(arr):
+    for index in range(len(arr)):
+        print(index)
+
+print('')
+EqualIndex([-6, 0, 2, 40])

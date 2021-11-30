@@ -5,6 +5,7 @@
 
 def reverseVowels(string):
     vowels = 'aeiouAEIOU'
+
     v, k = [], [],
     string = list(string)
     for i in range(len(string)):
@@ -33,10 +34,7 @@ def GoodStrings(words, char):
         if len(word) <= len(char):
             word = list(word)
             word_ = list(set(word))
-            print('this is the set')
             print(word_)
-            print('this is the list')
-            print(word)
             x = True
             for letter in word_:
                 if (letter not in char) or word.count(letter) > char.count(letter):
