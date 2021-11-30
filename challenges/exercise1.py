@@ -462,7 +462,9 @@ return a fixed point, if one exists. Otherwise, return False'''
 
 def EqualIndex(arr):
     for index in range(len(arr)):
-        print(index)
+        if index == arr[index]:
+            return True
+    return False
 
 print('')
-EqualIndex([-6, 0, 2, 40])
+print(EqualIndex([-6, 0, 9, 40]))
