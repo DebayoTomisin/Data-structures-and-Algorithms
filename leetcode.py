@@ -105,3 +105,21 @@ def SumTargetKai(arr, target):
 print(SumTargetKai([2, 7, 11, 15], 9))
 print('')
 print(SumTarget([2, 7, 11, 15], 22))
+
+'''Longest Substring Without Repeating Characters'''
+
+
+def LongestSubstring(string):
+    hash = {}
+    for i in range(len(string)):
+        print(string[i])
+        if string[i] in hash.keys():
+            hash.update({string[i]: i})
+            return len(hash.keys())
+        hash.update({string[i]: i})
+    return 0
+
+
+
+
+print(LongestStringkai("pwwkew"))
