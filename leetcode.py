@@ -120,13 +120,27 @@ def LongestSubstring(string):
     return 0
 
 
+def LongestSubStringSatou(string):
+    subarray = []
+    hash = {}
+    for i in range(len(string)):
+        if string[i] in hash.keys():
+            length = len(hash.keys())
+            subarray.append(length)
+            hash.clear()
+            hash.update({string[i]: i})
+        else:
+            hash.update({string[i]: i})
+    return max(subarray)
+
+
 def LongestSubStringkai(string):
     window = {}
     start = end = 0
     ans = 0
 
     for i in range(len(string)):
-        if string[i] in window.values() and window[string[i]] >= start:
+        if string[i] in window and window[string[i]] >= start:
             start = window[string[i]] + 1
         window[string[i]] = i
         end += 1
@@ -134,4 +148,7 @@ def LongestSubStringkai(string):
     return ans
 
 
-print(LongestSubStringkai("abcabcbb"))
+print('')
+print(LongestSubStringkai("pwwkew"))
+print('')
+print(LongestSubStringSatou("abcabcbb"))
