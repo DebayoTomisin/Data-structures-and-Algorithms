@@ -2,8 +2,10 @@ from abc import ABCMeta
 from abc import abstractmethod
 import math
 import re
+
 print('this is it gentlemen')
 """ This is basically me brushing up on my python skills"""
+
 
 class Shape(object):
     __metaclass__ = ABCMeta
@@ -11,6 +13,7 @@ class Shape(object):
     @abstractmethod
     def area(self):
         pass
+
     @abstractmethod
     def perimeter(self):
         pass
@@ -53,7 +56,7 @@ class ParameterPass:
 
 
 class ListMethods(object):
-    
+
     @classmethod
     def sumArray(cls, arr):
         size = len(arr)
@@ -93,9 +96,9 @@ class ListMethods(object):
     @classmethod
     def rotateArray(cls, arr, k):
         n = len(arr)
-        cls.reverseArray(arr, 0, k-1)
-        cls.reverseArray(arr, k, n-1)
-        cls.reverseArray(arr, 0, n-1)
+        cls.reverseArray(arr, 0, k - 1)
+        cls.reverseArray(arr, k, n - 1)
+        cls.reverseArray(arr, 0, n - 1)
         return arr
 
     @classmethod
@@ -174,6 +177,8 @@ def linearSearch(arr, value):
 
 
 print(insertionSort([2, 1, 5, 3, 10, 22, 12, 11]))
+
+
 # print(linearSearch([1, -5, 7, 21, 12, 5], 5))
 
 
@@ -212,7 +217,7 @@ arr = [-100, 1, 5, 5, 9, 7, 6, -18, 2, -3]
 for i in range(len(arr)):
     value = arr[i]
     ix = i
-    for j in range(i+1, len(arr)):
+    for j in range(i + 1, len(arr)):
         if arr[ix] > arr[j]:
             ix = j
     arr[i], arr[ix] = arr[ix], arr[i]
@@ -233,7 +238,6 @@ def selectionSort(arr):
 
 print(' ')
 print(selectionSort(arr))
-
 
 """What this problem is is that you find the number of values to the right of the set value that is less than the set
 number. its a simple problem that i applied the idea of selection sort to solve. """
@@ -330,9 +334,6 @@ def mergeSort(arr):
             j += 1
     return L, R, arr """
 
-
-
-
 arr2 = [1, 5, 8, 9, 14, 2, 3, 0]
 size = len(arr2)
 p = 0
@@ -345,6 +346,7 @@ def findLongest(sen):
     cleanString = re.sub('\W+', ' ', str)
     value = max(cleanString.split(), key=len)
     return value
+
 
 print(' ')
 print(findLongest('this is the correct value!!!!! i could see'))
@@ -368,10 +370,10 @@ print(insertion([3, 8, 9, 0]))
 
 '''The Maximum SubArray Problem.'''
 
+
 class MaximSubArray:
     def __init__(self, arr):
         self.arr = arr
-
 
     '''This is the brute force Approach to solving this problem'''
 
@@ -428,7 +430,6 @@ def maximSubArray(Arr, low, high):
             return crossLow, crossHigh, crossSum
 
 
-
 print('')
 subArray = [1, 2, 3]
 mid = int((0 + len(subArray)) / 2)
@@ -446,21 +447,34 @@ print('')
 def fibonacci(n):
     if n <= 2:
         return 1
-    return fibonacci(n -1) + fibonacci(n - 2)
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 # print(fibonacci(5))
 
 print('')
 print('')
+
+
 def palindrome(word):
     if len(word) <= 1:
         return True
-    if word[1] != word[-1]:
+    if word[0] != word[-1]:
         return False
-    w = word.pop(1, -1)
+    w = word.pop(0, -1)
     return palindrome(w)
 
 
 print('')
 print(palindrome('racecar'))
 
+
+# def palindromeStr(string):
+#     if string == string[:: -1]:
+#         return True
+#     else:
+#         return False
+#
+#
+# print('')
+# print(palindromeStr('civic'))
