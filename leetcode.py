@@ -89,4 +89,19 @@ def SumTarget(arr, target):
     return False
 
 
+def SumTargetKai(arr, target):
+    hash_table = {}
+
+    for i in range(len(arr)):
+        secondNumber = target - arr[i]
+        if secondNumber in hash_table.keys():
+            secondIndex = arr.index(secondNumber)
+            if i != secondIndex:  # this is to make sure we are not using the same index
+                return sorted([i, secondIndex])
+        hash_table.update({arr[i]: i})
+    return []
+
+
+print(SumTargetKai([2, 7, 11, 15], 9))
+print('')
 print(SumTarget([2, 7, 11, 15], 22))
