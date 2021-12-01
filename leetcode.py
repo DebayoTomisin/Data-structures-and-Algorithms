@@ -120,6 +120,18 @@ def LongestSubstring(string):
     return 0
 
 
+def LongestSubStringkai(string):
+    window = {}
+    start = end = 0
+    ans = 0
+
+    for i in range(len(string)):
+        if string[i] in window.values() and window[string[i]] >= start:
+            start = window[string[i]] + 1
+        window[string[i]] = i
+        end += 1
+        ans = max(ans, end - start)
+    return ans
 
 
-print(LongestStringkai("pwwkew"))
+print(LongestSubStringkai("abcabcbb"))
