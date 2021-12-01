@@ -69,3 +69,24 @@ print('')
 
 print(GoodStrings(words, chars))
 print(GoodStings_(words, chars))
+print('')
+
+'''Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.'''
+
+
+# this is the brute force approach to this problem
+
+def SumTarget(arr, target):
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            sum_ = arr[i] + arr[j]
+            if sum_ == target:
+                return [i, j]
+    return False
+
+
+print(SumTarget([2, 7, 11, 15], 22))
