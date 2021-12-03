@@ -154,7 +154,6 @@ print('')
 print(LongestSubStringSatou("abcabcbb"))
 print('')
 
-
 '''Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
 
 It is guaranteed that the answer will fit in a 32-bit integer.
@@ -163,7 +162,6 @@ A subarray is a contiguous subsequence of the array.'''
 
 
 def ProductSubarray(array):
-
     if len(array) == 1:
         return array[0]
     if len(array) < 1:
@@ -206,4 +204,25 @@ def ProductSubArrayKai(array):
 
 
 print('')
-print(ProductSubArrayKai([-2,3,-4]))
+print(ProductSubArrayKai([-2, 3, -4]))
+
+'''Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest 
+sum and return its sum.'''
+
+
+def SumSubArray(array):
+    maxend, maxsofar = array[0], array[0]
+
+    for num in array[1:]:
+        if num < (maxend + num):
+            maxend += num
+        else:
+            maxend = num
+
+        if maxsofar < maxend:
+            maxsofar = maxend
+    return maxsofar
+
+
+print('')
+print(SumSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
