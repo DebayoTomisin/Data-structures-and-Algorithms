@@ -163,21 +163,34 @@ A subarray is a contiguous subsequence of the array.'''
 
 
 def ProductSubarray(array):
+
+    if len(array) == 1:
+        return array[0]
+    if len(array) < 1:
+        return array
+
     hash = {}
     start = 0
     end = 1
-    while end < len(array):
-        product = array[start] * array[end]
-        hash.update({product: [array[start], array[end]]})
-        start += 1
-        end += 1
+    while end <= len(array):
+
+        if end == len(array):
+            product = array[end - 1]
+            hash.update({product: [array[end - 1]]})
+            end += 1
+        else:
+            product = array[start] * array[end]
+            hash.update({product: [array[start], array[end]]})
+            start += 1
+            end += 1
     hashArray = list(hash.keys())
     hashArray = sorted(hashArray)
+    print(hashArray)
 
     return hashArray[-1]
 
 
-print(ProductSubarray([-2,0,-1]))
+print(ProductSubarray([0, 2]))
 
 
 
