@@ -185,7 +185,6 @@ def ProductSubarray(array):
             end += 1
     hashArray = list(hash.keys())
     hashArray = sorted(hashArray)
-    print(hashArray)
 
     return hashArray[-1]
 
@@ -193,5 +192,18 @@ def ProductSubarray(array):
 print(ProductSubarray([0, 2]))
 
 
+def ProductSubArrayKai(array):
+    curMax, curMin = 1, 1
+    res = array[0]
+
+    for n in array:
+        vals = (n, n * curMax, n * curMin)
+        print(vals)
+        curMax, curMin = max(vals), min(vals)
+        print(curMax, curMin)
+        res = max(res, curMax)
+    return res
 
 
+print('')
+print(ProductSubArrayKai([-2,3,-4]))
