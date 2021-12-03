@@ -152,3 +152,33 @@ print('')
 print(LongestSubStringkai("pwwkew"))
 print('')
 print(LongestSubStringSatou("abcabcbb"))
+print('')
+
+
+'''Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
+
+It is guaranteed that the answer will fit in a 32-bit integer.
+
+A subarray is a contiguous subsequence of the array.'''
+
+
+def ProductSubarray(array):
+    hash = {}
+    start = 0
+    end = 1
+    while end < len(array):
+        product = array[start] * array[end]
+        hash.update({product: [array[start], array[end]]})
+        start += 1
+        end += 1
+    hashArray = list(hash.keys())
+    hashArray = sorted(hashArray)
+
+    return hashArray[-1]
+
+
+print(ProductSubarray([-2,0,-1]))
+
+
+
+
