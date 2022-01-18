@@ -148,7 +148,7 @@ def LongestSubStringkai(string):
     return ans
 
 
-print('')
+print('the longest sub string problem')
 print(LongestSubStringkai("pwwkew"))
 print('')
 print(LongestSubStringSatou("abcabcbb"))
@@ -226,3 +226,64 @@ def SumSubArray(array):
 
 print('')
 print(SumSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+
+
+def PalindromeStr(string):
+    if string == string[::-1]:
+        return True
+    else:
+        return False
+
+
+print(PalindromeStr('racecar'))
+
+
+'''Longest Palindromic substring'''
+
+def PalindromicSubString(string):
+    result = ''
+    resultLen = 0
+    resR, resL = 0, 0
+
+    for i in range(len(string)):
+        # odd number length of string
+        l, r = i, i
+        while l >= 0 and r < len(string) and string[l] == string[r]:
+            if (r -l + 1) > resultLen:
+                resR = r
+                resL = l + 1
+            l -= 1
+            r += 1
+        result = string[resL: resR]
+    return result
+
+    #     # even number length of string
+    #     l, r = i, i + 1
+    #     while l >= 0 and r < len(string) and string[l] == string[r]:
+    #         if (r - l + 1) > resultLen:
+    #             resR = r
+    #             resL = l + 1
+    #         l -= 1
+    #         r += 1
+    #     result = string[resL: resR]
+    # return result
+
+print('')
+print(PalindromicSubString('babad'))
+
+
+"""Remove Duplicates from Sorted Array
+This problem challenges you to remove duplicate values from an input array without using an external ds"""
+
+def removeDuplicates(arr):
+    k = 0
+    for i in range(len(arr)):
+        if arr[k] == arr[i]:
+            pass
+        else:
+            arr[k + 1] = arr[i]
+            k += 1
+    return k + 1
+
+
+print(removeDuplicates([1, 1, 2]))
