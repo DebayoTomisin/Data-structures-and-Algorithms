@@ -287,3 +287,21 @@ def removeDuplicates(arr):
 
 
 print(removeDuplicates([1, 1, 2]))
+
+
+"""Remove Element: This problem involves removing a given element from an array, it doesn't need to be  removed per say
+but the element should not be in the final output of the said input array"""
+
+
+def removeElement(arr, val):
+    k = 0
+
+    for i in range(len(arr)):
+        if arr[i] != val:
+           arr[k] = arr[i]
+           k += 1
+    return k
+
+
+print('')
+print(removeElement([3, 2, 2, 3], 3))
