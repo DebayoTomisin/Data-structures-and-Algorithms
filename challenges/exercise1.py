@@ -63,6 +63,7 @@ def SecondLargest(arr):
     for i in range(n):
         if largest < arr[i]:
             largest = arr[i]
+            continue
     arr.remove(largest)
     secondLargest = arr[0]
     for i in range(len(arr)):
